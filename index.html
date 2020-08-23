@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+
+        <header>
+            <a href="#" class="logo">World</a>
+            <div class="toggle"></div>
+        </header>
+
+        <img src="/EarthProject/bg.jpg" class="bg" alt="">
+        <img src="/EarthProject/bird.png" class="bird" alt="">
+        <div class="content">
+            <h2>We can save The<br><span>Earth</span></h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus deserunt laboriosam dolorem velit
+                ducimus! Quam dolorem deleniti odio odit natus omnis suscipit ullam. Accusantium similique</p>
+            <a href="#">Join Us</a>
+        </div>
+
+        <ul class="sci">
+            <li><a href="#"><img src="/EarthProject/facebook.png"></a></li>
+            <li><a href="#"><img src="/EarthProject/twitter.png"></a></li>
+            <li><a href="#"><img src="/EarthProject/instagram.png"></a></li>
+        </ul>
+
+        <div class="textBlocks">
+            <div class="blocks">
+                <h3>Defender of Earth</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nihil veritatis delectus esse provident
+                    voluptatum!</p>
+            </div>
+            <div class="blocks">
+                <h3>How to Save Water</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nihil veritatis delectus esse provident
+                    voluptatum!</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script type="text/javascript">
+        document.addEventListener("mousemove", function (e) {
+
+            /*The "mousemove" event is fired at an element when a pointing device (usually a mouse) is moved while the cursor's hotspot is inside it.*/
+
+            const bg = document.querySelector('.bg');
+            const bird = document.querySelector('.bird');
+            const content = document.querySelector('.content');
+
+            /* *Variables defined with const cannot be reassigned.
+               * Declaring a variable with const is similar to Block Scope
+               * JavaScript const variables must be assigned a value when they are declared
+               *The keyword const is a little misleading.
+
+                It does NOT define a constant value. It defines a constant reference to a value.
+
+                Because of this, we cannot change constant primitive values, but we can change the properties of constant objects. */
+
+            bg.style.width = 100 + e.pageX / 100 + '%';
+            bg.style.width = 100 + e.pageX / 100 + '%'; /*These setting move the background image (class .bg) when moused over, slightly because of the 100 (don't understand it yet)*/
+
+            bird.style.right = 100 + e.pageX / 2 + 'px';
+            /*the number at the end (/2 in this case) determines how far the images move across the page. The higher the number the less they move*/
+
+            content.style.left = 100 + e.pageX / 2 + 'px';
+
+            /*.style.right/left is for the direction you want to image to move in*/
+
+        })
+    </script>
+
+</body>
+
+/* The pageX read-only property of the MouseEvent interface returns the X (horizontal) coordinate (in pixels) at which
+the mouse was clicked, relative to the left edge of the entire document. This includes any portion of the document not
+currently visible.
+
+Being based on the edge of the document as it is, this property takes into account any horizontal scrolling of the page.
+For example, if the page is scrolled such that 200 pixels of the left side of the document are scrolled out of view, and
+the mouse is clicked 100 pixels inward from the left edge of the view, the value returned by pageX will be 300.*/
+
+</html>

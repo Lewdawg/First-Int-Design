@@ -1,0 +1,252 @@
+@import url(https://fonts.google.com/specimen/Poppins?query=poppins&sidebar.open=true&selection.family=Poppins:ital,wght@1,200);
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #000;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  /* width: 100vw; */
+  height: 100vh;
+  overflow: hidden;
+  /* The overflow property only works for block elements with a specified height. */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  /*positions on the left*/
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*positions center of container*/
+  padding: 100px;
+  /*pushes the contents in the container more*/
+  /* padding: 10vh 10vw; */
+}
+
+section header {
+  position: absolute;
+  /*sets the position absolute on the page*/
+  top: 0;
+  left: 0;
+  /*when these are set to 0 it positions the element in the top left corner*/
+  width: 100%;
+  /*This needs to be set as well as 'justify-con: space-betw to push the menu to the other side of the container*/
+  padding: 40px 100px;
+  /*pushes the contents to the required spot*/
+  /* padding: 4vh 10vw; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  /*We have to set this otherwise the background image will 'lay on top' of the logo and menu*/
+}
+
+section header .logo {
+  /*"World"*/
+  /*   position: relative; */
+  /* font-size: 1.5em; */
+  font-size: 3.5vh;
+  /*"World"*/
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .3vw;
+}
+
+section header .toggle {
+  /*Burger Menu*/
+  position: relative;
+  width: 80px;
+  height: 90px;
+  /*Setting the position on the screen*/
+  /* width: 4vw; */
+  /*  height: 9vh; */
+  background: url(/EarthProject/menu.png);
+  background-size: 40px;
+  /*sets the size of the menu*/
+  /* background-size: 3vh; */
+  background-repeat: no-repeat;
+  background-position: center;
+  /*center within this container*/
+  cursor: pointer;
+  /*sets the style on the pointer when hovering over it*/
+}
+
+.bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /*These set the background to fill the screen*/
+  /*While playing around using the Developer tools(Chrome) I seen that if we get rid on the padding in the styling section we also do not need these above setting also but as of right now I do not know what else changes in the code 23/09/20*/
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /*using object-fit: cover; will cut off the sides of the image, preserving the aspect ratio, and also filling in the space*/
+  background-position: center;
+  /*Using these commands we set the background-image to a larger scale rather than setting no padding on the 'section' styling (padding: 100px currently) which will have a more zoomed in narrower look to it*/
+}
+
+.bird {
+  position: absolute;
+  bottom: 0;
+  /*sets the image at the bottom of the screen*/
+  right: 200px;
+  /*pushes image to the left*/
+  /*  right: 5vw; */
+  max-height: 80%;
+  /*sets height of image*/
+  z-index: 2;
+}
+
+.content {
+  /* position: relative; */
+  /*Before*/
+  position: absolute;
+  left: 100px;
+  /*added this and 'position: absolute' when JS started*/
+  max-width: 600px;
+  /* max-width: 36vw; */
+  z-index: 2;
+}
+
+.content h2 {
+  font-size: 3.5em;
+  /* font-size: 6vh; */
+  color: #fff;
+  font-weight: 700;
+  line-height: 2em;
+  /*  line-height: 11.5vh; */
+}
+
+.content h2 span {
+  font-weight: 900;
+  font-size: 3.5em;
+  /* font-size: 21vh; */
+  letter-spacing: 5px;
+  /* letter-spacing: .4vw; */
+}
+
+.content p {
+  color: #fff;
+  margin-top: -15px;
+  line-height: 3vh;
+  font-size: 2vh;
+  /* margin-top: -1.5vh; */
+}
+
+.content a {
+  display: inline-block;
+  /* padding: 1vh 1vw; */
+  padding: 10px 20px;
+  background: #fff;
+  color: darkgreen;
+  /* color: #000; */
+  text-decoration: none;
+  /*to get rid of the underlining*/
+  text-transform: uppercase;
+  margin-top: 20px;
+  /* margin-top: 2vh; */
+  font-weight: 600;
+  letter-spacing: 2px;
+  /* letter-spacing: .1vw; */
+}
+
+/********************** Social Media Links *******************/
+.sci {
+  position: absolute;
+  top: 50%;
+  /*Pushes container down 50%, from the top the small container (White background) not really center of page*/
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  /*This will 'pull' 50% of the small container back up towards the top (Y axis), so now it is center aligned on the page*/
+  width: 60px;
+  /*width of the small container*/
+  /* width: 3.3vw; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  /*height of the container*/
+  /* padding: 1vw; */
+  background: #fff;
+}
+
+.sci li {
+  list-style: none;
+  /*gets rid of the bullet points*/
+}
+
+.sci li a {
+  display: inline-block;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+  /*scales down the size of the image*/
+}
+
+/*********************Text Blocks*******************************/
+.textBlocks {
+  position: absolute;
+  bottom: 0;
+  /*places them at bottom of page*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*makes them horizontal*/
+}
+
+.textBlocks .blocks {
+  position: relative;
+  padding: 20px;
+  /* padding: 2vh; */
+  margin-right: 40px;
+  /* margin-right: 2.2vw; */
+  max-width: 500px;
+  /* max-width: 27vw; */
+  background: rgba(0, 255, 0, 0.2);
+}
+
+.textBlocks .blocks h3 {
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  line-height: 3vh;
+  font-size: 3vh;
+}
+
+.textBlocks .blocks p {
+  color: #fff;
+  line-height: 2.5vh;
+  font-size: 1.8vh;
+  margin-top: 1vh;
+}
+/*# sourceMappingURL=style.css.map */
